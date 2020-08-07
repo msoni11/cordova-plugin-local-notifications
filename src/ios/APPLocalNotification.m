@@ -886,26 +886,6 @@
 }
 
 /**
- * Called when app has started
- * (by clicking on a local notification).
- */
-- (void) didFinishLaunchingWithOptions:(NSNotification*)notification
-{
-    NSDictionary* launchOptions = [notification userInfo];
-
-    UILocalNotification* localNotification;
-
-    localNotification = [launchOptions objectForKey:
-                         UIApplicationLaunchOptionsLocalNotificationKey];
-
-    if (localNotification) {
-        [self didReceiveLocalNotification:
-         [NSNotification notificationWithName:CDVLocalNotification
-                                       object:localNotification]];
-    }
-}
-
-/**
  * Called on notification settings registration is completed.
  */
 - (void) didRegisterUserNotificationSettings:(UIUserNotificationSettings*)settings
